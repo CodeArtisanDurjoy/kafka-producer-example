@@ -10,26 +10,30 @@
 
 2. Start Kafka Server / Broker
 
-    ```sh bin/kafka-server-start.sh config/server.properties```
+    ```./kafka-server-start.sh /opt/kafka-3.8.0-src/config/server.properties```
 
-3. Create topic
+3. Describe about topic 
+    ```./kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic topicname```
+
+
+4. Create topic
 
     ```sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic NewTopic --partitions 3 --replication-factor 1```
 
-4. list out all topic names
+5. list out all topic names
 
     ``` sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --list ```
 
-5. Describe topics
+6. Describe topics
   
     ``` sh bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic NewTopic ```
 
-6. Produce message
+7. Produce message
 
     ```sh bin/kafka-console-producer.sh --broker-list localhost:9092 --topic NewTopic```
 
 
-7. consume message
+8. consume message
 
     ``` sh bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic NewTopic --from-beginning ```
 
